@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>La Marcacion</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="./dist/img/icon.png" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="dist/css/material-design-iconic-font.min.css" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="dist/css/util.min.css" />
+  <link rel="stylesheet" type="text/css" href="dist/css/main.min.css" />
+  <!--===============================================================================================-->
+</head>
+
+<body>
+  <div class="limiter">
+    <div class="container-login100">
+      <div class="wrap-login100">
+        <form class="login100-form validate-form">
+          <span class="login100-form-title p-b-26" style="color: #175a94">
+            LA MARCACIÓN
+          </span>
+          <div class="media-image mr-3 rounded-circle text-center">
+            <a href="#"><img class="rounded-circle w-45" src="./dist/img/icon.png" alt="customer image" /></a>
+          </div>
+          <div class="wrap-input100 validate-input" data-validate="Ingrese su DNI: 12345678">
+            <input class="input100" type="number" id="txtdni" name="txtdni" maxlength="8"
+              oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              style="font-size: 35px; text-align: center" />
+            <span class="focus-input100" data-placeholder="DNI"></span>
+          </div>
+          <div class="wrap-input100 validate-input" data-validate="Ingrese su Clave">
+            <span class="btn-show-pass">
+              <i class="zmdi zmdi-eye"></i>
+            </span>
+            <input class="input100" type="password" id="txtclave" name="txtclave"
+              style="font-size: 35px; text-align: center" />
+            <span class="focus-input100" data-placeholder="Clave"></span>
+          </div>
+          <div class="container-login100-form-btn">
+            <div class="wrap-login100-form-btn">
+              <div class="login100-form-bgbtn"></div>
+              <button type="button" id="btnlogin" class="login100-form-btn">
+                Iniciar Sesion
+              </button>
+            </div>
+          </div>
+          <div class="text-center p-t-115">
+            <span class="txt1"> Developed by </span>
+            <a class="txt2" href="#"> LG-JC </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="./plugins/jquery/jquery.min.js"></script>
+  <script>
+    /*==================================================================
+  [ Show pass ]*/
+    var showPass = 0;
+    var _doma = "http://localhost:80/";
+    $(".btn-show-pass").on("click", function () {
+      if (showPass == 0) {
+        $(this).next("input").attr("type", "text");
+        $(this).find("i").removeClass("zmdi-eye");
+        $(this).find("i").addClass("zmdi-eye-off");
+        showPass = 1;
+      } else {
+        $(this).next("input").attr("type", "password");
+        $(this).find("i").addClass("zmdi-eye");
+        $(this).find("i").removeClass("zmdi-eye-off");
+        showPass = 0;
+      }
+    });
+
+  </script>
+  <script src="./dist/js/index.js"></script>
+</body>
+
+</html>
